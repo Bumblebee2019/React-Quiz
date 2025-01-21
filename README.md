@@ -1,5 +1,6 @@
 # React Quiz App
 
+## Description:
 What is better that learning React while learning React? I was studying how to use useReducer instead of useState to create an interactive quiz to help me study React questions. 
 Here's how the initial page looks like: 
 ![](Diagrams/InitialPage.png)
@@ -21,3 +22,7 @@ On the final page, user's results and highscore is displayed. If the user is not
 
 Now, the user beat his previous highscore, so it gets reset:
 ![](Diagrams/New_highscore.png)
+
+## Directions:
+In order for the project to run, clone it and open in Visual Studio Code. Open two terminals. In one, run "npm run server" and in the other "npm start". The former command launches the mock API from which our app pulls the questions
+and the latter command runs the application itself.
