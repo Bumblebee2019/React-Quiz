@@ -9,3 +9,6 @@ This is the quiz layout; with the question count, point count (questions are wei
 
 Because we chose the correct answer, number of points increased, and the correct answer was highlighted in blue, while all other questiosn are orange. When the user clicks on a choice, the "Next" button appears
 ![](Diagrams/Pic_3.png)
+
+When the user chooses an incorrect answer (clicked "Netflix", but the right answer is "Facebook"), the correct answer is still highlighted, and the number of points does not increase:
+![](Diagrams/Wrong-answer.png)
