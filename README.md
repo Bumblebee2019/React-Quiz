@@ -12,3 +12,6 @@ Because we chose the correct answer, number of points increased, and the correct
 
 When the user chooses an incorrect answer (clicked "Netflix", but the right answer is "Facebook"), the correct answer is still highlighted, and the number of points does not increase:
 ![](Diagrams/Wrong-answer.png)
+
+When we reach the final question, instead of the "Next" button "Finish" button appears
+![](Diagrams/Finish_button.png)
