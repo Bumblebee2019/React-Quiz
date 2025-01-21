@@ -6,3 +6,6 @@ Here's how the initial page looks like:
 
 This is the quiz layout; with the question count, point count (questions are weighed differently based on difficuly level), and the timer
 ![](Diagrams/Pic_2.png)
+
+Because we chose the correct answer, number of points increased, and the correct answer was highlighted in blue, while all other questiosn are orange. When the user clicks on a choice, the "Next" button appears
+![](Diagrams/Pic_3.png)
