@@ -15,3 +15,9 @@ When the user chooses an incorrect answer (clicked "Netflix", but the right answ
 
 When we reach the final question, instead of the "Next" button "Finish" button appears
 ![](Diagrams/Finish_button.png)
+
+On the final page, user's results and highscore is displayed. If the user is not satisfied with the score, or simply wants to beat the previous highscore, he can retake the quiz again
+![](Diagrams/Final_page.png)
+
+Now, the user beat his previous highscore, so it gets reset:
+![](Diagrams/New_highscore.png)
