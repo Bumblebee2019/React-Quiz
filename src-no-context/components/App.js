@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Loader from "./Loader";
 import Error from "./Error";
-import { createContext, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
@@ -74,9 +74,6 @@ function reducer(state, action) {
   }
 }
 
-//(1) Creating a Context
-export const PostContext = createContext(); //export so that other files can see it
-
 export default function App() {
   const [
     { questions, status, index, answer, points, highscore, secondsRemaining },
@@ -96,41 +93,48 @@ export default function App() {
   }, []);
 
   return (
-    //(2) Provide value to child components
-    <PostContext.Provider
-      value={{
-        dispatch,
-        numQuestions,
-        index,
-        numQuestions,
-        points,
-        maxPossiblePoints,
-        answer,
-        question: questions[index],
-        secondsRemaining,
-        index,
-        highscore,
-      }}
-    >
-      <div className="app">
-        <Header />
-        <Main>
-          {status === "loading" && <Loader />}
-          {status === "error" && <Error />}
-          {status === "ready" && <StartScreen />}
-          {status === "active" && (
-            <>
-              <Progress />
-              <Question />
-              <Footer>
-                <Timer />
-                <NextButton />
-              </Footer>
-            </>
-          )}
-          {status === "finished" && <FinishScreen />}
-        </Main>
-      </div>
-    </PostContext.Provider>
+    <div className="app">
+      <Header />
+      <Main>
+        {status === "loading" && <Loader />}
+        {status === "error" && <Error />}
+        {status === "ready" && (
+          <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
+        )}
+        {status === "active" && (
+          <>
+            <Progress
+              index={index}
+              numQuestions={numQuestions}
+              points={points}
+              maxPossiblePoints={maxPossiblePoints}
+              answer={answer}
+            />
+            <Question
+              question={questions[index]}
+              dispatch={dispatch}
+              answer={answer}
+            />
+            <Footer>
+              <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                numQuestions={numQuestions}
+                index={index}
+              />
+            </Footer>
+          </>
+        )}
+        {status === "finished" && (
+          <FinishScreen
+            dispatch={dispatch}
+            points={points}
+            maxPossiblePoints={maxPossiblePoints}
+            highscore={highscore}
+          />
+        )}
+      </Main>
+    </div>
   );
 }

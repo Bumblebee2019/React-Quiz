@@ -1,8 +1,4 @@
-import { createContext, useContext } from "react";
-import { PostContext } from "./App";
-
-function NextButton() {
-  const { dispatch, answer, index, numQuestions } = useContext(PostContext);
+function NextButton({ dispatch, answer, index, numQuestions }) {
   if (answer === null) return null;
   if (index < numQuestions - 1)
     return (

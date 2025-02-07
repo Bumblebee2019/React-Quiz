@@ -1,4 +1,11 @@
-function Progress({ index, numQuestions, points, maxPossiblePoints, answer }) {
+import { createContext, useContext } from "react";
+import { PostContext } from "./App";
+
+function Progress() {
+  //(3) Consuming the context value. This is just a different way to destruture the
+  //array. Another way to do this is in StartScreen.jsx
+  const { numQuestions, index, answer, points, maxPossiblePoints } =
+    useContext(PostContext);
   return (
     <header className="progress">
       <progress max={numQuestions} value={index + Number(answer !== null)} />

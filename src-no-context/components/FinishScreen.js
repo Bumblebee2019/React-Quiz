@@ -1,9 +1,4 @@
-import { createContext, useContext } from "react";
-import { PostContext } from "./App";
-
-function FinishScreen() {
-  const { points, maxPossiblePoints, highscore, dispatch } =
-    useContext(PostContext);
+function FinishScreen({ points, maxPossiblePoints, highscore, dispatch }) {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;

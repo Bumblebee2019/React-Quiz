@@ -1,9 +1,6 @@
-import { createContext, useContext } from "react";
 import Options from "./Options";
-import { PostContext } from "./App";
 
-function Questions() {
-  const { question, dispatch, answer } = useContext(PostContext);
+function Questions({ question, dispatch, answer }) {
   return (
     <div>
       <h4>{question.question}</h4>

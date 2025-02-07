@@ -1,8 +1,6 @@
-import { createContext, useContext, useEffect } from "react";
-import { PostContext } from "./App";
+import { useEffect } from "react";
 
-function Timer() {
-  const { dispatch, secondsRemaining } = useContext(PostContext);
+function Timer({ dispatch, secondsRemaining }) {
   const mins = Math.floor(secondsRemaining / 60);
   const seconds = secondsRemaining % 60;
   useEffect(
