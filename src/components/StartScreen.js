@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { createContext, useEffect, useReducer } from "react";
 import { PostContext } from "./App";
+import { useQuiz } from "../contexts/QuizContext";
 
 function StartScreen() {
   //(3) Consuming the context value. This is done without destructuring. A different way to
   //do this is in Progress.jsx
-  const x = useContext(PostContext);
+  const x = useQuiz();
   return (
     <div className="start">
       <h2>Welcome to The React Quiz!</h2>
