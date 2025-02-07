@@ -1,9 +1,10 @@
 import { createContext, useContext } from "react";
 import Options from "./Options";
 import { PostContext } from "./App";
+import { useQuiz } from "../contexts/QuizContext";
 
 function Questions() {
-  const { question, dispatch, answer } = useContext(PostContext);
+  const { question, dispatch, answer } = useQuiz();
   return (
     <div>
       <h4>{question.question}</h4>
